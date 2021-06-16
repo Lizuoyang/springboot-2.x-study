@@ -1,0 +1,51 @@
+### 查询任务列表
+GET http://localhost:8080/job/list?pageNum=1&pageSize=10
+
+### 重新构建任务
+POST http://localhost:8080/job/reschedule
+Content-Type: application/json
+
+{
+  "jobClassName": "com.lizuoyang.springboot.job.impl.HelloJob",
+  "jobGroupName": "测试定时任务",
+  "cronExpression": "* * * * * ? *"
+}
+
+### 删除任务
+POST http://localhost:8080/job/delete
+Content-Type: application/json
+
+{
+  "jobClassName": "com.lizuoyang.springboot.job.impl.HelloJob",
+  "jobGroupName": "测试定时任务"
+}
+
+### 继续任务
+POST http://localhost:8080/job/resume
+Content-Type: application/json
+
+{
+  "jobClassName": "com.lizuoyang.springboot.job.impl.HelloJob",
+  "jobGroupName": "测试定时任务"
+}
+
+### 暂停任务
+POST http://localhost:8080/job/pause
+Content-Type: application/json
+
+{
+  "jobClassName": "com.lizuoyang.springboot.job.impl.HelloJob",
+  "jobGroupName": "测试定时任务"
+}
+
+### 构建任务
+POST http://localhost:8080/job/save
+Content-Type: application/json
+
+{
+  "jobClassName": "com.lizuoyang.springboot.job.impl.HelloJob",
+  "jobGroupName": "测试定时任务",
+  "cronExpression": "* * * * * ? *"
+}
+
+###
