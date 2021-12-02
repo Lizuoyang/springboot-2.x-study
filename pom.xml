@@ -40,6 +40,8 @@
         <module>datasource-pool-hikaricp-multiple</module>
         <module>datasource-pool-druid-single</module>
         <module>datasource-pool-druid-multiples</module>
+        <module>mybatis-plus-demo</module>
+        <module>bean-searcher</module>
     </modules>
 
 
