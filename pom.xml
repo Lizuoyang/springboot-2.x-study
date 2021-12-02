@@ -42,6 +42,7 @@
         <module>datasource-pool-druid-multiples</module>
         <module>mybatis-plus-demo</module>
         <module>bean-searcher</module>
+        <module>mybatis-plus-general</module>
     </modules>
 
 

@@ -1,1 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:mysql://81.71.68.248/bean_searcher?useSSL=false&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+
 
