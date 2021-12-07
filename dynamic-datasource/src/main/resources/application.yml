@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    dynamic:
+      primary: users # 设置默认的数据源或者数据源组，默认值即为 master
+      datasource:
+        orders:
+          url: jdbc:mysql://81.71.68.248/test_orders?useSSL=false&autoReconnect=true&failOverReadOnly=false
+          username: root
+          password: root
+          driver-class-name: com.mysql.jdbc.Driver
+        users:
+          url: jdbc:mysql://81.71.68.248/test_users?useSSL=false&autoReconnect=true&failOverReadOnly=false
+          username: root
+          password: root
+          driver-class-name: com.mysql.jdbc.Driver
