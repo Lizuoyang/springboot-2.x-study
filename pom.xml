@@ -44,6 +44,7 @@
         <module>bean-searcher</module>
         <module>mybatis-plus-general</module>
         <module>dynamic-datasource</module>
+        <module>dynamic-datasource-sharding-jdbc</module>
     </modules>
 
 
