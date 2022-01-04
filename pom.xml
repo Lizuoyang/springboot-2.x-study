@@ -50,6 +50,7 @@
         <module>redis-demo</module>
         <module>redisson-demo</module>
         <module>sub-library-and-sub-table</module>
+        <module>spring-cache-demo</module>
     </modules>
 
 

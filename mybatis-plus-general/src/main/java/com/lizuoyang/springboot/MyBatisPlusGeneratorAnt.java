@@ -193,7 +193,7 @@ public class MyBatisPlusGeneratorAnt {
         if (Objects.equals(likeTable.toUpperCase(), "Y")) {
             strategy.setLikeTable(new LikeTable(scanner("table name，like matching")));
         } else {
-            strategy.setInclude(scanner("table name,matching,Multiple English comma separated").split(","));
+            strategy.setInclude(getTables(scanner("table name,matching,Multiple English comma separated")));
         }
         strategy.setControllerMappingHyphenStyle(true);
         if (StringUtils.checkValNotNull(getProperty("table_prefix"))) {
@@ -202,5 +202,10 @@ public class MyBatisPlusGeneratorAnt {
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
         mpg.execute();
+    }
+
+    // 处理 all 情况
+    protected static String[] getTables(String tables) {
+        return "all".equals(tables) ? new String[]{} : tables.split(",");
     }
 }

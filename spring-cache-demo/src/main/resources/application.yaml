@@ -1,0 +1,41 @@
+spring:
+  # 数据源配置
+  datasource:
+    url: jdbc:mysql://81.71.68.248/test_users?useSSL=false&autoReconnect=true&failOverReadOnly=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  cache:
+    type: redis
+  redis:
+    host: 81.71.68.248
+    database: 0
+    port: 6379
+    password: 123456
+    timeout: 0
+    jedis:
+      pool:
+        max-active: 8 # 连接池最大连接数，默认为 8 。使用负数表示没有限制。
+        max-idle: 8 # 默认连接数最小空闲的连接数，默认为 8 。使用负数表示没有限制。
+        min-idle: 0 # 默认连接池最小空闲的连接数，默认为 0 。允许设置 0 和 正数。
+        max-wait: -1 # 连接池最大阻塞等待时间，单位：毫秒。默认为 -1 ，表示不限制。
+
+# mybatis-plus 配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.lizuoyang.springboot.entity
+
+# logging
+logging:
+  level:
+    com:
+      lizuoyang:
+        springboot:
+          mapper: debug
