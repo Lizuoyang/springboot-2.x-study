@@ -45,6 +45,11 @@
         <module>mybatis-plus-general</module>
         <module>dynamic-datasource</module>
         <module>dynamic-datasource-sharding-jdbc</module>
+        <module>read-and-write-separate</module>
+        <module>flyway-demo</module>
+        <module>redis-demo</module>
+        <module>redisson-demo</module>
+        <module>sub-library-and-sub-table</module>
     </modules>
 
 
