@@ -42,7 +42,7 @@ public class MyBatisPlusGeneratorAnt {
                 return ipt;
             }
         }
-        throw new MybatisPlusException("Please Input " + tip + "!");
+        throw new MybatisPlusException("请输入 " + tip + "!");
     }
 
     /**
@@ -98,7 +98,7 @@ public class MyBatisPlusGeneratorAnt {
         //controller 命名方式 例如：%sBusinessImpl 生成 UserBusinessImpl
         gc.setControllerName("%s" + getProperty("controller.endwith"));
         //实体属性 Swagger2 注解
-//        gc.setSwagger2(true);
+        gc.setSwagger2(true);
         //是否开启 baseResultMap
         gc.setBaseResultMap(Boolean.valueOf(getProperty("base.result.map")));
         //是否开启 baseColumnList
@@ -189,11 +189,11 @@ public class MyBatisPlusGeneratorAnt {
 //        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
 //        strategy.setSuperEntityColumns("id");
-        String likeTable = scanner("Whether to use like matching table name? (Y/N)");
+        String likeTable = scanner("是否使用模糊匹配表名? (Y/N)");
         if (Objects.equals(likeTable.toUpperCase(), "Y")) {
-            strategy.setLikeTable(new LikeTable(scanner("table name，like matching")));
+            strategy.setLikeTable(new LikeTable(scanner("请输入表名前缀或者关键字进行匹配")));
         } else {
-            strategy.setInclude(getTables(scanner("table name,matching,Multiple English comma separated")));
+            strategy.setInclude(getTables(scanner("请输入表名全名进行匹配，多个表名请用英文逗号分隔开，输入all匹配所有表")));
         }
         strategy.setControllerMappingHyphenStyle(true);
         if (StringUtils.checkValNotNull(getProperty("table_prefix"))) {
