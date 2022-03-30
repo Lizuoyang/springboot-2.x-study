@@ -53,6 +53,7 @@
         <module>spring-cache-demo</module>
         <module>apache-rocket-simple-demo</module>
         <module>rocket-mq-spring</module>
+        <module>apache-kafka-simple-demo</module>
     </modules>
 
 
