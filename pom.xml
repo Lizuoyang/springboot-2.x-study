@@ -55,6 +55,7 @@
         <module>rocket-mq-spring</module>
         <module>apache-kafka-simple-demo</module>
         <module>kafka-spring-demo</module>
+        <module>mongo-demo</module>
     </modules>
 
 
