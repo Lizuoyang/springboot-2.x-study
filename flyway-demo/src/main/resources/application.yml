@@ -3,7 +3,7 @@ spring:
     url: jdbc:mysql://81.71.68.248/flyway-demo?useSSL=false&autoReconnect=true&failOverReadOnly=false
     driver-class-name: com.mysql.jdbc.Driver
     username: root
-    password: root
+    password: 123456
 
   flyway:
     # 开启flyway
@@ -18,6 +18,6 @@ spring:
     # 此时，如果目录下没有迁移脚本，会抛出 IllegalStateException 异常
     check-location: false
     # 数据库地址
-    url: jdbc:mysql://81.71.68.248/flyway-demo?useSSL=false&autoReconnect=true&failOverReadOnly=false
-    username: root
-    password: root
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
