@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    orders:
+      url: jdbc:mysql://localhost:3306/test_order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: admin
+      # HikariCP 自定义配置，对应 HikariConfig 配置属性类
+      hikari:
+        # 池中维护的最小空先连接数 默认为10
+        minimum-idle: 10
+        # 池中最大连接数 包括闲置和使用中的连接 默认为10个
+        maximum-pool-size: 10
+
+    users:
+      url: jdbc:mysql://localhost:3306/test_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: admin
+      # HikariCP 自定义配置，对应 HikariConfig 配置属性类
+      hikari:
+        # 池中维护的最小空先连接数 默认为10
+        minimum-idle: 10
+        # 池中最大连接数 包括闲置和使用中的连接 默认为10个
+        maximum-pool-size: 10

@@ -1,0 +1,27 @@
+rocketmq:
+  # 配置rocketmq的name-server地址
+  name-server: 81.71.68.248:9876
+  #Producer 配置项
+  producer:
+    group: demo-producer-group #生产者分组
+    send-message-timeout: 3000 #发送消息超时时间，单位：毫秒
+    compress-message-body-threshold: 4096 #消息压缩阈值，消息超过阈值自动压缩
+    max-message-size: 4194304 #消息体最大允许大小
+    retry-times-when-send-failed: 2 #消息同步发送失败后最大重试次数
+    retry-times-when-send-async-failed: 2 #消息异步发怂失败厚最大重试次数
+    retry-next-server: false #发送消息给broker失败时，是否发送给另一台broker
+    access-key:
+    secret-key:
+    enable-msg-trace: true #是否开启消息轨道
+    customized-trace-topic: RMQ_SYS_TRACE_TOPIC #自定义消息轨迹的TOPIC
+  #Consumer 配置项
+  consumer:
+    #配置某个消费分组，是否监听指定topic
+    listeners:
+      test-consumer-topic:
+        topic1: false # 关闭 test-consumer-group 对 topic1 的监听消费
+
+
+
+
+

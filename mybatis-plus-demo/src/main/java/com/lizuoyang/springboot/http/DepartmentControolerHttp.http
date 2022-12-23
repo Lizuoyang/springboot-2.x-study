@@ -1,0 +1,14 @@
+GET http://localhost:8080/department/get/1
+Accept: application/json
+
+###
+
+GET http://localhost:8080/department/get?name=Finance
+Accept: application/json
+
+###
+
+GET http://localhost:8080/department/list
+Accept: application/json
+
+###

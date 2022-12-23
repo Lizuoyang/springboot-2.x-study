@@ -1,0 +1,54 @@
+# 无参请求
+GET http://localhost:8080/employee/index
+Accept: application/json
+###
+
+# 根据单个查询条件查询
+GET http://localhost:8080/employee/index?age=32
+Accept: application/json
+###
+
+# 数据排序
+GET http://localhost:8080/employee/index?sort=age&order=desc
+Accept: application/json
+###
+
+# 查询指定字段
+GET http://localhost:8080/employee/index?onlySelect=id,name
+Accept: application/json
+###
+
+# 排除指定字段
+GET http://localhost:8080/employee/index?selectExclude=id,name
+Accept: application/json
+###
+
+# 分页查询
+GET http://localhost:8080/employee/index?page=0&size=5
+Accept: application/json
+###
+
+# 字段过滤
+# [field]-op=eq =
+# [field]-op=ne ≠
+# [field]-op=ge >=
+# [field]-op=le <=
+# [field]-op=gt >
+# [field]-op=lt <
+# [field]-op=bt <= & <=
+# [field]-op=mv in
+# [field]-op=in in
+# [field]-op=sw startwith
+# [field]-op=ew endwith
+# [field]-op=ew endwith
+# [field]-op=ey empty
+# [field]-op=ny notempty
+# [field]-ic=true 忽略大小写
+GET http://localhost:8080/employee/index?age=32&age-op=eq
+Accept: application/json
+###
+
+
+GET http://localhost:8080/employee/count
+Accept: application/json
+###

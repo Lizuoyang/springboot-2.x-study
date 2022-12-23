@@ -1,0 +1,15 @@
+com\lizuoyang\springboot\HibernateValidateDemoApplication.class
+com\lizuoyang\springboot\pojo\UserUpdateGenderDTO.class
+com\lizuoyang\springboot\handle\GlobalExceptionHandler.class
+com\lizuoyang\springboot\controller\UserController.class
+com\lizuoyang\springboot\pojo\ApiResponse.class
+com\lizuoyang\springboot\handle\GlobalResponseBodyHandler.class
+com\lizuoyang\springboot\service\UserService.class
+com\lizuoyang\springboot\exception\ServiceExceptionEnum.class
+com\lizuoyang\springboot\pojo\UserAddDTO.class
+com\lizuoyang\springboot\annotation\InEnum.class
+com\lizuoyang\springboot\handle\InEnumValidator.class
+com\lizuoyang\springboot\pojo\UserUpdateDTO.class
+com\lizuoyang\springboot\interfaces\IntArrayValuable.class
+com\lizuoyang\springboot\annotation\InEnum$List.class
+com\lizuoyang\springboot\enums\GenderEnum.class

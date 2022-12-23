@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test_user?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: admin
+    type: com.alibaba.druid.pool.DruidDataSource
+    # Druid 自定义配置 对应 DruidDataSource 中的setting方法属性
+    druid:
+      # 最小空闲数
+      min-idle: 0
+      # 最大连接数
+      max-active: 20
+      filter:
+        # 配置 StatFilter ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatFilter
+        stat:
+          # 开启慢查询记录
+          log-slow-sql: true
+          # 慢 SQL 的标准，单位：毫秒
+          slow-sql-millis: 5000
+        # 配置 StatViewServlet ，对应文档 https://github.com/alibaba/druid/wiki/%E9%85%8D%E7%BD%AE_StatViewServlet%E9%85%8D%E7%BD%AE
+        stat-view-servlet:
+          # 是否开启 StatViewServlet
+          enabled: true
+          # 账号
+          login-username: lizuoyang
+          # 密码
+          login-password: 123456
