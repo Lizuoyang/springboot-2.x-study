@@ -56,6 +56,7 @@
         <module>apache-kafka-simple-demo</module>
         <module>kafka-spring-demo</module>
         <module>mongo-demo</module>
+        <module>redis-lua-limit-demo</module>
     </modules>
 
 
