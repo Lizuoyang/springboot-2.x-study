@@ -57,6 +57,7 @@
         <module>kafka-spring-demo</module>
         <module>mongo-demo</module>
         <module>redis-lua-limit-demo</module>
+        <module>easy-excel-demo</module>
     </modules>
 
 
