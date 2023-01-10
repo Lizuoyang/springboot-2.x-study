@@ -7,6 +7,7 @@ import com.lizuoyang.springboot.pojo.eo.DemoDataRead;
 import com.lizuoyang.springboot.pojo.eo.DemoDataWrite;
 import com.lizuoyang.springboot.utils.FileUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * excel最简单操作控制器
@@ -83,10 +85,19 @@ public class ExcelSimpleController {
         // 这里注意 有同学反应使用swagger 会导致各种问题，请直接用浏览器或者用postman
         response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         response.setCharacterEncoding("utf-8");
+        List<Map> data = getData(count);
+        List<DemoDataWrite> writeData = new ArrayList<>();
+        for (Map datum : data) {
+            DemoDataWrite demoDataWrite = new DemoDataWrite();
+            demoDataWrite.setName((String)datum.get("name"));
+            demoDataWrite.setBirthDay((Date) datum.get("birthDay"));
+            demoDataWrite.setMoney((Double) datum.get("money"));
+            writeData.add(demoDataWrite);
+        }
         // 这里URLEncoder.encode可以防止中文乱码 当然和easyexcel没有关系
         String fileName = URLEncoder.encode("测试", "UTF-8").replaceAll("\\+", "%20");
         response.setHeader("Content-disposition", "attachment;filename*=utf-8''" + fileName + ".xlsx");
-        EasyExcel.write(response.getOutputStream(), DemoDataWrite.class).sheet("模板").doWrite(getData(count));
+        EasyExcel.write(response.getOutputStream(), DemoDataWrite.class).sheet("模板").doWrite(writeData);
     }
 
 
@@ -97,13 +108,18 @@ public class ExcelSimpleController {
      */
     private List getData(int count) {
         // 模拟查询数据库数据
-        List<DemoDataWrite> list = new ArrayList<>();
+        List<Map> list = new ArrayList<>();
         for (int i = 1; i < count; i++) {
-            DemoDataWrite dataEo = new DemoDataWrite();
+            /*DemoDataWrite dataEo = new DemoDataWrite();
             dataEo.setName("克隆人" + i + "号");
             dataEo.setBirthDay(new Date());
             dataEo.setMoney(new Double(200));
-            list.add(dataEo);
+            list.add(dataEo);*/
+            Map<String, Object> data = new HashMap<>();
+            data.put("name", "克隆人" + i + "号");
+            data.put("birthDay", new Date());
+            data.put("money", new Double(200));
+            list.add(data);
         }
         return list;
     }
